@@ -4,7 +4,8 @@
 #include "converter_tree.h"
 #include <stddef.h>
 
-struct converter {
+struct converter
+{
 	conv_tree root, location;
 	unsigned char should_this_be_freed;
 };
@@ -17,4 +18,3 @@ char *get_current_conversion(converter conv);
 unsigned char is_converter_reset(converter conv);
 
 #endif
-

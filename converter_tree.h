@@ -5,21 +5,22 @@
 
 struct convert_tree_node;
 
-struct convert_tree_node_char_pair {
+struct convert_tree_node_char_pair
+{
 	struct convert_tree_node *node;
 	char next_char;
 };
 
-struct convert_tree_node {
+struct convert_tree_node
+{
 	char *value;
-	unsigned char should_be_freed_bits;//1 = value, 2 = this
+	unsigned char should_be_freed_bits; // 1 = value, 2 = this
 	size_t subnodes_len;
 	size_t subnodes_buf_len;
 	struct convert_tree_node_char_pair *subnodes;
 };
 
 typedef struct convert_tree_node *conv_tree;
-
 
 void init_conv_tree(conv_tree, unsigned char should_this_be_freed);
 void free_conv_tree(conv_tree tree);
